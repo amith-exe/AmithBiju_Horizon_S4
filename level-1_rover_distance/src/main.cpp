@@ -17,7 +17,7 @@ int main() {
     cout << "Enter destination coordinates (x y): ";
     cin >> get<0>(destination) >> get<1>(destination);
 
-        //error check for invalide inputs , this will check for both input
+        //error check for invalide inputs 
          if(!cin) {
         cout << "Invalid coordinate input\n";
         return 1;
@@ -34,11 +34,19 @@ int main() {
 
     cout << "Enter maximum speed: ";
     cin >> maxSpeed;
-        //basic error chcek
+        // error check 
     if(v < 0 || a < 0 || maxSpeed <= 0) {
         cout << "Velocity, acceleration and max speed must be positive\n";
         return 1;
     }
+    if(v == 0 && a == 0){
+        cout << "Rover cannot move with zero velocity and acceleration\n";
+         return 1;
+    }
+    if(v > maxSpeed){
+    cout << "Initial velocity cannot be greater than maximum speed\n";
+    return 1;
+}
      //calling function to do the calculation
     double distance = Rover::calculateDistance(origin,destination);
     double time = Rover::calculateTime(distance,v,a,maxSpeed);
