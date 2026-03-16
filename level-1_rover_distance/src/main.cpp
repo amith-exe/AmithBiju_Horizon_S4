@@ -36,7 +36,7 @@ int main() {
     cin >> maxSpeed;
         // error check 
     if(v < 0 || a < 0 || maxSpeed <= 0) {
-        cout << "Velocity, acceleration and max speed must be positive\n";
+        cout << "Velocity and acceleration must be non-negative, and maximum speed must be positive\n";
         return 1;
     }
     if(v == 0 && a == 0){
