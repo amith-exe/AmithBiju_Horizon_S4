@@ -1,52 +1,47 @@
-#include <iostream>
-#include <tuple>
 #include "../include/Rover.hpp"
+#include <cmath>
 
-using namespace std;
+// distance calculation
+double Rover::calculateDistance(
+     std::tuple<double,double>& origin,
+     std::tuple<double,double>& destination
+){
+    // extracting the values from tuple for calculation
+    double x1 = std::get<0>(origin);
+    double y1 = std::get<1>(origin);
+    double x2 = std::get<0>(destination);
+    double y2 = std::get<1>(destination);
 
-int main() {
+    // using distance formula to find the distance between the two points
+    double dx = x2 - x1;
+    double dy = y2 - y1;
 
-    // Tuples to store origin and destination coordinates
-    tuple<double,double> origin;
-    tuple<double,double> destination;
+    return std::sqrt(dx * dx + dy * dy);
+}
 
+double Rover::calculateTime(
+    double distance,
+    double initialVelocity,
+    double acceleration,
+    double maxSpeed
+){
+    /*
+       Using the kinematic equation:
+       s = ut + 1/2 at^2
 
-    cout << "Enter origin coordinates (x y): ";
-    cin >> get<0>(origin) >> get<1>(origin);
+       Solving for time
+       t = (-u + sqrt(u^2 + 2as)) / a
+    */
 
-    cout << "Enter destination coordinates (x y): ";
-    cin >> get<0>(destination) >> get<1>(destination);
-
-        //error check for invalide inputs , this will check for both input
-         if(!cin) {
-        cout << "Invalid coordinate input\n";
-        return 1;
-       }
-
-    // parameters for calculation 
-    double v,a,maxSpeed;
-
-    cout << "Enter initial velocity: ";
-    cin >> v;
-
-    cout << "Enter acceleration: ";
-    cin >> a;
-
-    cout << "Enter maximum speed: ";
-    cin >> maxSpeed;
-        //basic error chcek
-    if(v < 0 || a < 0 || maxSpeed <= 0) {
-        cout << "Velocity, acceleration and max speed must be positive\n";
-        return 1;
+    // If acceleration is zero, rover moves with constant velocity
+    if(acceleration == 0){
+        return distance / initialVelocity;
     }
-     //calling function to do the calculation
-    double distance = Rover::calculateDistance(origin,destination);
-    double time = Rover::calculateTime(distance,v,a,maxSpeed);
 
-    
+    double time =
+        (-initialVelocity +
+        std::sqrt(initialVelocity * initialVelocity +
+        2 * acceleration * distance)) / acceleration;
 
-    cout << "\nDistance to destination: " << distance << " meters\n";
-    cout << "Time required: " << time << " seconds\n";
-
-    return 0;
+    return time;
 }
