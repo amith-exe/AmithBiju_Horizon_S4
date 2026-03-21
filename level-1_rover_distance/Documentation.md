@@ -30,6 +30,8 @@ level-1_rover_distance/
   src/
     Rover.cpp          # Distance/time implementations
     main.cpp           # Input, validation, output flow
+  output_img/
+    out-1.png         # Sample output image
 ```
 
 ## Core Logic
