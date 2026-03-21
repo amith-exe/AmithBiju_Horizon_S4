@@ -38,9 +38,9 @@ level-1_rover_distance/
 
 Implemented in `Rover::calculateDistance(...)`:
 
-\[
-\text{distance}=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}
-\]
+```text
+distance = sqrt((x2 - x1)^2 + (y2 - y1)^2)
+```
 
 This is Euclidean distance in 2D.
 
@@ -50,23 +50,23 @@ Implemented in `Rover::calculateTime(...)`:
 
 - If `a == 0`, constant-speed motion is used:
 
-\[
-t=\frac{s}{u}
-\]
+```text
+t = s / u
+```
 
 - Otherwise, it solves from:
 
-\[
-s=ut+\frac{1}{2}at^2
-\Rightarrow
-t=\frac{-u+\sqrt{u^2+2as}}{a}
-\]
+```text
+s = u*t + (1/2)*a*t^2
+t = (-u + sqrt(u^2 + 2*a*s)) / a
+```
 
 where:
 
-- `s` = distance
-- `u` = initial velocity
-- `a` = acceleration
+- `s` = distance (meters)
+- `u` = initial velocity (m/s)
+- `a` = acceleration (m/s^2)
+- `t` = time (seconds)
 
 ## Input Validation Present in `main.cpp`
 
@@ -98,11 +98,11 @@ On Windows with MinGW, run:
 Input:
 
 ```text
-Origin: 0 0
-Destination: 3 4
-Initial velocity: 0
-Acceleration: 1
-Maximum speed: 10
+Enter origin coordinates (x y): 0 0
+Enter destination coordinates (x y): 3 4
+Enter initial velocity: 0
+Enter acceleration: 1
+Enter maximum speed: 10
 ```
 
 Output:
@@ -114,7 +114,4 @@ Time required: 3.16228 seconds
 
 ## Output Image
 
-![Sample Output](output/out-1.png)
-
-
-
+![Sample Output](output_img/out-1.png)
