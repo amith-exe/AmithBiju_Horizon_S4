@@ -87,12 +87,8 @@ From `level-1_rover_distance`:
 
 ```bash
 g++ -std=c++17 src/main.cpp src/Rover.cpp -Iinclude -o rover
-```
 
-On Windows with MinGW, run:
-
-```powershell
-.\rover.exe
+.\rover
 ```
 
 ## Example Run
