@@ -51,10 +51,6 @@ else:
     servo_angle = angle
     LED = OFF
 ```
-## Media Placeholders
-
-Use this section to show your project visuals directly in the document.
-
 ## Output proof
  All proof of ouput is saved in output folder.
 
