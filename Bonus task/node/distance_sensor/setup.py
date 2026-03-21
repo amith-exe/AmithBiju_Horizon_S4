@@ -1,0 +1,36 @@
+from setuptools import find_packages, setup
+
+package_name = "distance_sensor"
+
+setup(
+    name=package_name,
+    version="0.0.0",
+    packages=find_packages(exclude=["test"]),
+    py_modules=[
+        "distance_publisher",
+        "rover_decision_node",
+        "command_listener",
+    ],
+    data_files=[
+        ("share/ament_index/resource_index/packages", ["resource/" + package_name]),
+        ("share/" + package_name, ["package.xml"]),
+    ],
+    install_requires=["setuptools"],
+    zip_safe=True,
+    maintainer="amithbiju",
+    maintainer_email="amithbiju@example.com",
+    description="Simple ROS 2 distance publisher and subscriber example.",
+    license="Apache-2.0",
+    extras_require={
+        "test": [
+            "pytest",
+        ],
+    },
+    entry_points={
+        "console_scripts": [
+            "distance_publisher = distance_publisher:main",
+            "rover_decision_node = rover_decision_node:main",
+            "command_listener = command_listener:main",
+        ],
+    },
+)
