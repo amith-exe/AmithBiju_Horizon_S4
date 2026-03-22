@@ -5,12 +5,7 @@ package_name = "distance_sensor"
 setup(
     name=package_name,
     version="0.0.0",
-    packages=find_packages(exclude=["test"]),
-    py_modules=[
-        "distance_publisher",
-        "rover_decision_node",
-        "command_listener",
-    ],
+    packages=find_packages(include=["distance_sensor", "distance_sensor.*"]),
     data_files=[
         ("share/ament_index/resource_index/packages", ["resource/" + package_name]),
         ("share/" + package_name, ["package.xml"]),
@@ -28,9 +23,8 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "distance_publisher = distance_publisher:main",
-            "rover_decision_node = rover_decision_node:main",
-            "command_listener = command_listener:main",
+            "distance_publisher = distance_sensor.distance_publisher:main",
+            "distance_subscriber = distance_sensor.distance_subscriber:main",
         ],
     },
 )

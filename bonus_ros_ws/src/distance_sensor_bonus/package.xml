@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>distance_sensor</name>
+  <name>distance_sensor_bonus</name>
   <version>0.0.0</version>
-  <description>Simple ROS 2 distance publisher and subscriber example.</description>
+  <description>ROS 2 bonus package with distance, rover decision, and command listener nodes.</description>
   <maintainer email="amithbiju@example.com">amithbiju</maintainer>
   <license>Apache-2.0</license>
 

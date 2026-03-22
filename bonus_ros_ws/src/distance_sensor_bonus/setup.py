@@ -1,12 +1,11 @@
 from setuptools import find_packages, setup
 
-package_name = "distance_sensor"
+package_name = "distance_sensor_bonus"
 
 setup(
     name=package_name,
     version="0.0.0",
-    packages=find_packages(exclude=["test"]),
-    py_modules=["distance_publisher", "distance_subscriber"],
+    packages=find_packages(include=["distance_sensor_bonus", "distance_sensor_bonus.*"]),
     data_files=[
         ("share/ament_index/resource_index/packages", ["resource/" + package_name]),
         ("share/" + package_name, ["package.xml"]),
@@ -24,8 +23,9 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "distance_publisher = distance_publisher:main",
-            "distance_subscriber = distance_subscriber:main",
+            "distance_publisher = distance_sensor_bonus.distance_publisher:main",
+            "rover_decision_node = distance_sensor_bonus.rover_decision_node:main",
+            "command_listener = distance_sensor_bonus.command_listener:main",
         ],
     },
 )
