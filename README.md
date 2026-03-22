@@ -24,8 +24,11 @@ Output screenshot:
 - LED turns `ON` when requested angle crosses safe limit.
 
 Output proof:
+
 ![Level 2 Demo](level-2_arduino_servo/output/vid-1.gif)
+
 ![Level 2 Diagram](level-2_arduino_servo/output/dia-cir.png)
+
 ![Level 2 Circuit](level-2_arduino_servo/output/pic-cir.png)
 
 ### Level 3 - ROS2 Publisher/Subscriber
