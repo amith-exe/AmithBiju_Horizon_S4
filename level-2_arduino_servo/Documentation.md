@@ -62,5 +62,6 @@ else:
 
 ### Circuit Image
 ![Circuit Image](output/pic-cir.png)
+link -> https://www.tinkercad.com/things/gat3sHwqw1j-ontrols-a-servo-motor-using-a-potentiometer/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard&sharecode=OQwKQmpdLX1BVEE4ix_cXQMMPB47l12ypWzKdd-FYZ0
 
 
